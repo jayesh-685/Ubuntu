@@ -1,7 +1,7 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-/* void prineSubArrays (int arr[], int n) {
+void prineSubArrays (int arr[], int n) {
     for (int i=0; i<n; i++) {
         for (int j=i; j<n; j++) {
             for (int k=i; k<=j; k++)
@@ -9,9 +9,9 @@ using namespace std;
             cout << endl;
         }
     }
-} */
+}
 
-/* int max_sum_sub_arr_m1 (int arr[], int n) {
+int max_sum_sub_arr_m1 (int arr[], int n) {
     // brute force method  // O(n^3)
     int maxSum = INT_MIN;
     for (int i=0; i<n; i++) {
@@ -23,9 +23,9 @@ using namespace std;
         }
     }
     return maxSum;
-} */
+}
 
-/* int max_sum_sub_arr_m2 (int arr[], int n) {
+int max_sum_sub_arr_m2 (int arr[], int n) {
     // slightly more optimised  // O(n^2)
     int cs_arr [n+1];
     cs_arr[0] = 0;
@@ -39,9 +39,9 @@ using namespace std;
         }
     }
     return max_sum;
-} */
+}
 
-/* int kadanes_algorithm (int arr[], int n) {
+int kadanes_algorithm (int arr[], int n) {
     // very efficient algo to find max sum sub arr
     // O(n)
     // just keep track of the current sum till ith element
@@ -57,14 +57,14 @@ using namespace std;
     }
     return maxSum;
 } 
- */
+
 // in case there is wrapping of elements that is you can consider elements both from staring and ending at the same time
 // ex - {4 -4 6 -6 10 -11 12}
 // here we would consider all elements for sub array except -11
 // so we can calculate sum by subtracting sum of non-contributing elements from total sum of array
 // we can find the non contributing elements by reversing the sign of each element and then using kadan's algorithm
 
-/* int max_circular_subarray_sum (int arr[], int n) {
+int max_circular_subarray_sum (int arr[], int n) {
 
     int nonWrapSum = kadanes_algorithm(arr, n);
     int totalSum = 0;
@@ -77,9 +77,9 @@ using namespace std;
     int wrapSum = totalSum + nonContriSum;  // - - = +
     return max(wrapSum, nonWrapSum);
 }
- */
 
-/* bool pairSum (int arr[], int n, int k) {
+
+bool pairSum (int arr[], int n, int k) {
     // find 2 elements whose sum is equal to k
     // if found in given array, return true
     // brute force method would be to check all elements using two loops
@@ -96,8 +96,8 @@ using namespace std;
         }
     }
     return false;
-} */
-/* int main () {
+}
+int main () {
     int n;
     cin >> n;
     int arr[n];
@@ -108,4 +108,4 @@ using namespace std;
     cout << pairSum(arr, n, k) << endl;
 
     return 0;
-} */
+}

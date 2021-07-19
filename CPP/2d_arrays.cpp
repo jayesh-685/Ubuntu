@@ -2,7 +2,7 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-/* void spiralMatrixTraverse (int **arr, int n, int m) {
+void spiralMatrixTraverse (int **arr, int n, int m) {
 
     int top = 0;
     int bottom = n-1;
@@ -31,9 +31,9 @@ using namespace std;
         cout << endl;
         direction = (++direction)%4;
     }
-} */
+}
 
-/* void transposeOfMatrix (int **arr, int n) {
+void transposeOfMatrix (int **arr, int n) {
     for (int i=0; i<n; i++) {
         for (int j=i+1; j<n; j++) {
             int temp = arr[i][j];
@@ -41,9 +41,9 @@ using namespace std;
             arr[j][i] = temp;
         }
     }
-} */
+} 
 
-/* void matrixMultiplication (int **arr1, int n, int m, int **arr2, int o, int p) {
+void matrixMultiplication (int **arr1, int n, int m, int **arr2, int o, int p) {
     for (int i=0; i<n; i++) {
         for (int j=0; j<p; j++) {
             int sum = 0;
@@ -54,8 +54,8 @@ using namespace std;
         cout << endl;
     }
 }
- */
-/* bool searchInMatrix (int **arr, int n, int m, int k) {
+
+bool searchInMatrix (int **arr, int n, int m, int k) {
     // we have to find k in matrix arr
     // linear search would be the brute force method
     // for an optimized way, each array should be in ascending order
@@ -101,7 +101,7 @@ using namespace std;
         mid = (start + end)/2;
     }
     return false;
-} */
+} 
 
 int main () {
 

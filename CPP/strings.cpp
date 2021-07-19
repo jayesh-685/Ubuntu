@@ -1,7 +1,7 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-/* void toUpperCase (string &s) {
+void toUpperCase (string &s) {
     for (int i=0; i<s.length(); i++) {
         if (s[i] >= 'a' && s[i] <= 'z')
             s[i] -= 32;
@@ -18,7 +18,7 @@ void toLowerCase (string &s) {
     }
 
     // or use transform(s.begin(), s.end(), s.begin(), ::tolower);
-} */
+}
 
 int maxFreqChar (const string &s) {
     int freqArr [26] = {0};
