@@ -21,10 +21,8 @@ void toLowerCase (string &s) {
 } */
 
 int maxFreqChar (const string &s) {
-    int freqArr [26];
-    for (int i=0; i<26; i++)
-        freqArr[i] = 0;
-
+    int freqArr [26] = {0};
+    
     for (int i=0; i<s.length(); i++) 
         freqArr[s[i]-'a']++;
 
