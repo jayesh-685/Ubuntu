@@ -55,7 +55,7 @@ using namespace std;
     }
 }
  */
-bool searchInMatrix (int **arr, int n, int m, int k) {
+/* bool searchInMatrix (int **arr, int n, int m, int k) {
     // we have to find k in matrix arr
     // linear search would be the brute force method
     // for an optimized way, each array should be in ascending order
@@ -78,8 +78,30 @@ bool searchInMatrix (int **arr, int n, int m, int k) {
     // if the matrix is such that the first element of each row is greater than the last element of last row then we can use a better approach
     // the matrix then becomes equivalent to a sorted 1d array
     // but if we create a temp array from a matrix then it will increase time comlexity
-    
-}
+    // so we give a index to each element in the matrix and then determine the row and column no using that index
+    // for ex if the index of a element is 5 then its row no is 5/(no of columns) and column no is 5/(no of columns)
+    // them we simply use binary search
+
+    // n = no of rows  // m = no of columns
+
+    int start = 0, end = n*m - 1;
+    int mid = (start + end)/2;
+    cout << start << " " << mid << " " << end << endl;
+
+    while (start <= end) {
+        int num = arr[mid/m][mid%m];
+        cout << num << endl;
+        if (num == k) {
+            return true;
+        } else if (num > k) {
+            end = mid-1;
+        } else {
+            start = mid+1;
+        }
+        mid = (start + end)/2;
+    }
+    return false;
+} */
 
 int main () {
 
@@ -122,7 +144,7 @@ int main () {
     int k;
     cin >> k;
 
-    cout << searchInMatrix(arr, n, m, k) << endl;
+    //cout << searchInMatrix(arr, n, m, k) << endl;
     return 0;
 }
 
