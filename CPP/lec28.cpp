@@ -8,7 +8,6 @@ int largestWordInSentence (char arr[], int n) {
             currLength = 0;
         else
             currLength++;
-        cout << currLength << endl;
         maxLength = max(maxLength, currLength);
     }
     return maxLength;
@@ -21,7 +20,6 @@ int main () {
     char arr[n+1];
     cin.getline(arr, n);
     cin.ignore();
-    //cout << arr[7];
     cout << largestWordInSentence(arr, n);
 
     return 0;
