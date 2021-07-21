@@ -40,9 +40,23 @@ int updateBit (int n, int pos, int value) {
     return (n | (value<<pos));
 }
 
+bool powOf2 (int n) {
+    /*if n = 6 = 0110 then n-1 = 5 can be written by flipping the right most set bit (1) and the digits before it
+    so 5 can be written as 0101
+    similarly 8 = 1000 so n-1 = 7 = 0111
+    if we take & of n and n-1 then the answer has same bits as n except the rightmost set bit
+    0110 & 0101 =  0100
+    if n is a power of 2 then n & n-1 would be 0 using the above logic
+    1000 & 0111 = 0000 */
+
+    return !(n & n-1);  //this doesn't cover the corner case where n is 0
+    return (n && !(n & n-1));
+}
+
 int main () {
-    cout << getBit(5, 2) << endl;         //1
-    cout << setBit(5, 1) << endl;         //7
-    cout << clearBit(13, 2) << endl;      // 9
-    cout << updateBit(5, 1, 1) << endl;   // 7
+    // cout << getBit(5, 2) << endl;         //1
+    // cout << setBit(5, 1) << endl;         //7
+    // cout << clearBit(13, 2) << endl;      // 9
+    // cout << updateBit(5, 1, 1) << endl;   // 7
+    cout << boolalpha << powOf2(8) << " " << powOf2(0) << endl;
 }
