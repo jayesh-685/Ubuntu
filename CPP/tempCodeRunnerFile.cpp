@@ -1,2 +1,2 @@
 
-void toLowerCase (string &s) {
+        cout << i << endl;
