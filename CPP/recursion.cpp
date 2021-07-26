@@ -90,6 +90,13 @@ int lastOccurance (int arr[], int n, int k, int i) {
         return lastOccurance(arr, n, k, i-1);
 }
 
+/* int lastOccurance (int arr[],int n,int t) {
+    if (arr[n-1]==t) {
+        return n-1;
+    }
+    return lastOccurance(arr,n-1,t);
+} */
+
 int main () {
     //cout << fibonaci(5) << endl;
     // cout << sum(4) << endl;
