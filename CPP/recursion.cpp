@@ -97,6 +97,40 @@ int lastOccurance (int arr[], int n, int k, int i) {
     return lastOccurance(arr,n-1,t);
 } */
 
+void reverse (const string &str) {
+    // we will go to the last of the string then just print each character from the last. We won't be reversin the original string
+    if (str.length() == 0)
+        return;
+    string rest = str.substr(1);  // will make a substring starting from index 1
+    reverse(rest);
+    cout << str[0]; 
+}
+
+void reverse (string &str, int i, int n) {
+    if (i > n-1)
+        return;
+    char temp = str[i];
+    str[i] = str[n-1];
+    str[n-1] = temp;
+    reverse(str, i+1, n-1);
+}
+
+void replacePi (const string &s) {
+    if (s.length() == 0)
+        return;
+    if (s[0] == 'p' && s[1] == 'i') {
+        cout << "3.14";
+        replacePi(s.substr(2));
+    } else {
+        cout << s[0];
+        replacePi(s.substr(1));
+    }
+}
+
+void towerOfHanoi (int n, char src, char dest, char help) {
+    // we have to move n discs from src to dest using help. For that we move the top n-1 discs from src to help 
+}
+
 int main () {
     //cout << fibonaci(5) << endl;
     // cout << sum(4) << endl;
@@ -106,7 +140,12 @@ int main () {
     // cout << checkSorted(arr, 5) << endl;
     //printNoDec(9);
     //printNoInc(9);
-    int arr[] = {1, 2, 3, 2, 5, 2, 3};
+    //int arr[] = {1, 2, 3, 2, 5, 2, 3};
     //cout << firstOccurance(arr, 7, 2, 0) << endl;
-    cout << lastOccurance(arr, 7, 2, 6) << endl;
+    //cout << lastOccurance(arr, 7, 2, 6) << endl;
+    string s;
+    getline(cin, s);
+    // reverse(s, 0, s.length());
+    // cout << s << endl;
+    replacePi(s);
 }
